@@ -11,6 +11,8 @@
 .svn/
 .swiftpm/
 migrate_working_dir/
+# Windows-specifikus szemétfájl
+Thumbs.db
 
 # IntelliJ related
 *.iml
@@ -18,10 +20,9 @@ migrate_working_dir/
 *.iws
 .idea/
 
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-#.vscode/
+# VS Code related (Kihagyva az általad generált alapján, de gyakran kerül bele)
+.vscode/
+# Ha nem szeretnél verziókezelni specifikus VS Code beállításokat, vedd ki a kommentet!
 
 # Flutter/Dart/Pub related
 **/doc/api/
@@ -32,6 +33,26 @@ migrate_working_dir/
 .pub/
 /build/
 /coverage/
+
+# Kiegészítések a generált fájlokhoz, amiket a Flutter build rendszer hoz létre:
+.flutter-plugins
+.packages
+
+# Platform-specifikus generált build fájlok és beállítások
+# Android
+/android/local.properties # A helyi SDK útvonalát tartalmazza
+/android/.gradle
+
+# iOS/macOS
+ios/Flutter/Generated.xcconfig
+macos/Flutter/Generated.xcconfig
+
+# Linux/Windows generált cmake fájlok
+linux/flutter/generated_plugins.cmake
+windows/flutter/generated_plugins.cmake
+
+# Web
+web/flutter_bootstrap.js
 
 # Symbolication related
 app.*.symbols
