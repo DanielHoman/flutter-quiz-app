@@ -1,67 +1,82 @@
-# Miscellaneous (Általad generáltak)
+# Miscellaneous
 *.class
 *.log
 *.pyc
 *.swp
 .DS_Store
 .atom/
-.build/
 .buildlog/
 .history
 .svn/
-.swiftpm/
-migrate_working_dir/
-# Windows-specifikus szemétfájl
-Thumbs.db
 
-# IntelliJ related (Általad generáltak)
+# IntelliJ related
 *.iml
 *.ipr
 *.iws
 .idea/
 
-# VS Code related (Kihagyva az általad generált alapján, de gyakran kerül bele)
-# Ha nem szeretnél verziókezelni specifikus VS Code beállításokat, vedd ki a kommentet!
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
 .vscode/
 
-# Flutter/Dart/Pub related (Általad generált és javasolt kiegészítések)
+# Flutter/Dart/Pub related
 **/doc/api/
 **/ios/Flutter/.last_build_id
 .dart_tool/
+.flutter-plugins
 .flutter-plugins-dependencies
+.packages
 .pub-cache/
 .pub/
 /build/
-/coverage/
 
-# Kiegészítések a generált fájlokhoz, amiket a Flutter build rendszer hoz létre:
-.flutter-plugins
-.packages
+# Web related
+lib/generated_plugin_registrant.dart
 
-# Platform-specifikus generált build fájlok és beállítások
-# Android
-# A helyi SDK útvonalát tartalmazza
-/android/local.properties
-/android/.gradle
-
-# iOS/macOS
-ios/Flutter/Generated.xcconfig
-macos/Flutter/Generated.xcconfig
-
-# Linux/Windows generált cmake fájlok (opcionális, de ajánlott)
-linux/flutter/generated_plugins.cmake
-windows/flutter/generated_plugins.cmake
-
-# Web
-web/flutter_bootstrap.js
-
-# Symbolication related (Általad generáltak)
+# Symbolication related
 app.*.symbols
 
-# Obfuscation related (Általad generáltak)
+# Obfuscation related
 app.*.map.json
 
-# Android Studio will place build artifacts here (Általad generáltak)
+# Android Studio will place build artifacts here
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+
+#----------------------------------------------------------------------#
+# Keystore for release builds
+# Különösen fontos: SOHA ne töltsd fel a privát kulcsokat!
+*.keystore
+
+# Android
+# Android build output
+/android/app/build
+/android/.gradle
+/android/local.properties
+/android/key.properties
+# A gradle-wrapper.jar általában benne szokott maradni a verziókövetésben (git), de a cache nem.
+
+# iOS / macOS
+# Pods és build
+/ios/.symlinks
+/ios/Flutter/Generated.xcconfig
+/ios/Pods/
+/ios/.ios_build_data
+/macos/.symlinks
+/macos/Flutter/Generated.xcconfig
+/macos/Pods/
+/macos/.macos_build_data
+
+# Windows / Linux
+# Build output
+/windows/x64
+/linux/build
+
+# Web
+/web/
+
+# Temp files
+*~
