@@ -28,34 +28,36 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
   @override
   Widget build(context) {
     final QuizQuestion currentQuestion = questions[currentQuestionIndex];
-    return SizedBox(
-      width: double.infinity,
-      child: Container(
-        margin: const EdgeInsets.all(40),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text(
-              currentQuestion.text,
-              textAlign: TextAlign.center,
-              style: GoogleFonts.comicNeue(
-                color: Colors.white,
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
+    return Center(
+      child: SizedBox(
+        width: 600,
+        child: Container(
+          margin: const EdgeInsets.all(40),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                currentQuestion.text,
+                textAlign: TextAlign.center,
+                style: GoogleFonts.comicNeue(
+                  color: Colors.white,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            const SizedBox(height: 30),
-            // "..." egy lista elemeit "kicsomagolja" és egyesével beilleszti egy másik listába
-            ...currentQuestion.getshuffledAnswers().map((item) {
-              return AnswerButton(
-                answerText: item,
-                onPressed: () {
-                  answerQuestion(item);
-                },
-              );
-            }),
-          ],
+              const SizedBox(height: 30),
+              // "..." egy lista elemeit "kicsomagolja" és egyesével beilleszti egy másik listába
+              ...currentQuestion.shuffledAnswers.map((item) {
+                return AnswerButton(
+                  answerText: item,
+                  onPressed: () {
+                    answerQuestion(item);
+                  },
+                );
+              }),
+            ],
+          ),
         ),
       ),
     );
