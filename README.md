@@ -26,7 +26,3 @@ This application focused on understanding and practicing the following core Flut
 This project was developed as part of the **Flutter & Dart - The Complete Guide [2025 Edition]** course.
 
 **Instructor:** Maximilian Schwarzmüller
-
-## ✍️ Author
-
-Homán Dániel - 2025
