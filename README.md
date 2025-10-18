@@ -15,7 +15,7 @@ This application focused on understanding and practicing the following core Flut
 
 * **Widget Fundamentals:** Usage and differentiation between `StatelessWidget` and `StatefulWidget`.
 * **State Management:** Handling user interactions and updating the UI using the `State` object.
-* **Data Structuring:** 
+* **Data Structuring:** Modeling the quiz questions and answers using Dart Lists and Maps.
 * **UI Layout:** Utilizing core layout widgets like `Column`, `Row`, and `Container`.
 * **Event Handling:** Implementing callbacks and logic for button presses (`OutlinedButton`).
 * **Conditional Rendering:** Toggling between the main quiz screen and the results screen based on state.
