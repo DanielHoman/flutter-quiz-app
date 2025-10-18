@@ -8,8 +8,8 @@ class QuestionsSummary extends StatelessWidget {
 
   @override
   Widget build(context) {
-    const Color correctColor = Colors.blue;
-    const Color incorrectColor = Colors.red;
+    const Color correctColor = Color.fromARGB(255, 5, 66, 116);
+    const Color incorrectColor = Color.fromARGB(255, 241, 34, 19);
 
     return Center(
       child: SizedBox(
