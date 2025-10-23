@@ -1,4 +1,4 @@
-# 🧠 Simple Quiz App (Flutter)
+# Simple Quiz App (Flutter)
 
 This is a basic, straightforward quiz application built with **Flutter** and **Dart**. The primary goal of this project was **learning** and practice, completed as part of an intensive Udemy course.
 
