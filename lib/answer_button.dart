@@ -12,7 +12,7 @@ class AnswerButton extends StatelessWidget {
   final void Function()? onPressed;
 
   @override
-  Widget build(context) {
+  Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [

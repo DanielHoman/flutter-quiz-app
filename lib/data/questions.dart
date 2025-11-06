@@ -15,7 +15,7 @@ const List<QuizQuestion> questions = [
     'By defining widgets in config files',
     'By using XCode for iOS and Android Studio for Android',
   ]),
-  QuizQuestion('What\'s the purpose of a StatefulWidget?', [
+  QuizQuestion("What's the purpose of a StatefulWidget?", [
     'Update UI as data changes',
     'Update data as UI changes',
     'Ignore data changes',

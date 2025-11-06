@@ -7,9 +7,9 @@ class QuestionsSummary extends StatelessWidget {
   final List<Map<String, Object>> summaryData;
 
   @override
-  Widget build(context) {
-    const Color correctColor = Color.fromARGB(255, 5, 66, 116);
-    const Color incorrectColor = Color.fromARGB(255, 241, 34, 19);
+  Widget build(BuildContext context) {
+    const correctColor = Color.fromARGB(255, 5, 66, 116);
+    const incorrectColor = Color.fromARGB(255, 241, 34, 19);
 
     return Center(
       child: SizedBox(
@@ -18,8 +18,7 @@ class QuestionsSummary extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: summaryData.map((data) {
-              final Color indexColor =
-                  data["user_answer"] == data["correct_answer"]
+              final indexColor = data['user_answer'] == data['correct_answer']
                   ? correctColor
                   : incorrectColor;
               return Column(
@@ -35,7 +34,7 @@ class QuestionsSummary extends StatelessWidget {
                           shape: BoxShape.circle,
                         ),
                         child: Text(
-                          ((data["question_index"] as int) + 1).toString(),
+                          ((data['question_index']! as int) + 1).toString(),
                           style: GoogleFonts.comicNeue(
                             color: Colors.white,
                             fontSize: 24,
@@ -49,25 +48,26 @@ class QuestionsSummary extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              data["question"] as String,
+                              data['question']! as String,
                               style: GoogleFonts.comicNeue(
                                 color: Colors.white,
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            data["user_answer"] == data["correct_answer"]
-                                ? const SizedBox()
-                                : Text(
-                                    data["user_answer"] as String,
-                                    style: GoogleFonts.comicNeue(
-                                      color: incorrectColor,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
+                            if (data['user_answer'] == data['correct_answer'])
+                              const SizedBox()
+                            else
+                              Text(
+                                data['user_answer']! as String,
+                                style: GoogleFonts.comicNeue(
+                                  color: incorrectColor,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                             Text(
-                              data["correct_answer"] as String,
+                              data['correct_answer']! as String,
                               style: GoogleFonts.comicNeue(
                                 color: correctColor,
                                 fontSize: 18,

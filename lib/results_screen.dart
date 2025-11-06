@@ -14,23 +14,23 @@ class ResultsScreen extends StatelessWidget {
   final void Function() restartQuiz;
 
   List<Map<String, Object>> get summaryData {
-    final List<Map<String, Object>> summary = [];
-    for (int i = 0; i < selectedAnswers.length; i++) {
+    final summary = <Map<String, Object>>[];
+    for (var i = 0; i < selectedAnswers.length; i++) {
       summary.add({
-        "question_index": i,
-        "question": questions[i].text,
-        "correct_answer": questions[i].answers[0],
-        "user_answer": selectedAnswers[i],
+        'question_index': i,
+        'question': questions[i].text,
+        'correct_answer': questions[i].answers[0],
+        'user_answer': selectedAnswers[i],
       });
     }
     return summary;
   }
 
   @override
-  Widget build(context) {
-    final int numTotalQuestions = questions.length;
-    final int numCorrectQuestions = summaryData
-        .where((item) => item["user_answer"] == item["correct_answer"])
+  Widget build(BuildContext context) {
+    final numTotalQuestions = questions.length;
+    final numCorrectQuestions = summaryData
+        .where((item) => item['user_answer'] == item['correct_answer'])
         .length;
 
     return SizedBox(
@@ -41,7 +41,7 @@ class ResultsScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "You answered $numCorrectQuestions out of $numTotalQuestions questions correctly!",
+              'You answered $numCorrectQuestions out of $numTotalQuestions questions correctly!',
               textAlign: TextAlign.center,
               style: GoogleFonts.comicNeue(
                 color: Colors.white,
@@ -56,7 +56,7 @@ class ResultsScreen extends StatelessWidget {
               onPressed: restartQuiz,
               style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
               icon: const Icon(Icons.change_circle_outlined),
-              label: const Text("Restart Quiz"),
+              label: const Text('Restart Quiz'),
             ),
           ],
         ),
